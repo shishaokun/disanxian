@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	div.dsx-wumai.fixed-window
+	link(rel="stylesheet", href="/css/aboutme.css")
+	link(rel="stylesheet", href="/css/wumai.css")
+	div.main
+		h1(class="txt-for-share") 拒绝雾霾，从我做起
+		//- img(src="images/disanxian_kouzhao.png")
+		span.disanxian-mata-img
+		p 地三鲜工作室
+		i building...
+
+	script(type="text/javascript", src="/javascript/aboutme.js")
+	//- script(type="text/javascript", src="/javascript/weixinshare.js")
+	script(type='text/javascript').
+		weather();

@@ -1,0 +1,27 @@
+{
+	"/": {
+		"name": "index",
+		"title": "欢迎",
+		"lgnAble": false
+	},
+	"/index": {
+		"name": "index",
+		"title": "首页",
+		"lgnAble": false
+	},
+	"/login": {
+		"name": "login",
+		"title": "登录",
+		"lgnAble": false
+	},
+	"/admin": {
+		"name": "login",
+		"title": "管理员",
+		"lgnAble": true
+	},
+	"/aboutme":{
+		"name": "aboutme",
+		"title": "关于我",
+		"lgnAble": false
+	}
+}
