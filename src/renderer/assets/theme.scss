@@ -1,0 +1,213 @@
+// 多行省略
+@mixin word-ellipsis ($num) {
+    display: -webkit-box; 
+    word-break: break-all;
+    line-clamp: $num;
+    -webkit-line-clamp: $num;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    box-orient: vertical;
+    -webkit-box-orient: vertical;
+}
+
+// 多行省略
+@mixin backgroundSizeContain () {
+    background-size: contain
+}
+
+$title-font-color: rgb(51, 51, 51);
+$title-font-color-hover: rbga(51, 51, 51, 0.5);
+
+$default-font-color: rgb(68, 68, 68);
+$default-font-color-hover: rgba(68, 68, 68, 0.5);
+
+$title-font-color-light: rgb(255, 255, 255);
+
+$tips-font-color: rgb(145, 145, 145);
+$font-light-color: rgb(255, 255, 255);
+
+$notice-background: rgb(177, 0, 0);
+
+$img-border-color: rgb(247, 247, 247);
+
+$border-color: rgb(245, 245, 245);
+$shadow-color: rgb(232, 232, 232);
+
+$title-hover: rgb(255, 244, 163);
+
+
+// 主题颜色
+$theme-background: rgb(255, 255, 255);
+$theme-background-boxshaw: rgba(0, 0, 0, .5);
+$theme-background-hr: rgb(244, 244, 244);
+
+
+// 按钮文字颜色
+$button-blue-color: rgb(60, 113, 249);
+$button-white-color: rgb(255, 255, 255);
+
+// 链接颜色
+$link-default-color: rgb(77, 126, 249);
+$red-color: rgb(220, 70, 70);
+
+// 吧背景默认色
+$forum-banner-background: rgb(43, 128, 255);
+
+// 占位背景
+$placeholder-background: rgb(128, 128, 128);
+$placeholder-background-light: rgb(225, 225, 225);
+
+// swipper 颜色
+$swipper-background: rgb(187, 187, 187);
+$swipper-item: rgb(106, 106, 106);
+
+
+.fold-left-enter-active {
+    animation-name: fold-left-in;
+    animation-duration: .3s;
+}
+.fold-left-leave-active {
+    animation-name: fold-left-out;
+    animation-duration: .3s;
+}
+.fold-right-enter-active {
+    animation-name: fold-right-in;
+    animation-duration: .3s;
+}
+.fold-right-leave-active {
+    animation-name: fold-right-out;
+    animation-duration: .3s;
+}
+@keyframes fold-left-in {
+0% {
+    transform: translate3d(100%, 0, 0);
+}
+100% {
+    transform: translate3d(0, 0, 0);
+}
+}
+@keyframes fold-left-out {
+0% {
+    transform: translate3d(0, 0, 0);
+}
+100% {
+    transform: translate3d(-100%, 0, 0);
+}
+}
+
+.icon-back-normal {
+    background-image: url(/static/images/icon_back@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-back-light {
+    background-image: url(/static/images/icon_back_light@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-more {
+    background-image: url(/static/images/icon_more@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-search {
+    background-image: url(/static/images/icon_search@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-search-light {
+    background-image: url(/static/images/icon_search_light@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-feedback-close {
+    background-image: url(/static/images/icon_close_n@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-delete {
+    background-image: url(/static/images/icon_close@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-history {
+    background-image: url(/static/images/icon_history@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-atmosphere-up {
+    background-image: url(/static/images/icon_toolbar_atmosphere_up@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-atmosphere-down {
+    background-image: url(/static/images/icon_toolbar_atmosphere_down@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-notice {
+    background-image: url(/static/images/icon_notice@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-toolbar-share {
+    background-image: url(/static/images/icon_toolbar_share@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-toolbar-reply {
+    background-image: url(/static/images/icon_toolbar_reply@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-toolbar-atmosphere-up {
+    background-image: url(/static/images/icon_toolbar_atmosphere_up@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-toolbar-atmosphere-down {
+    background-image: url(/static/images/icon_toolbar_atmosphere_down@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-video {
+    background-image: url(/static/images/icon_video@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-image {
+    background-image: url(/static/images/icon_image@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-card-image {
+    background-image: url(/static/images/icon_card_image@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-hide {
+    background-image: url(/static/images/icon_hide@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-sign {
+    background-image: url(/static/images/icon_sign@3x.png);
+    @include backgroundSizeContain();
+}
+.icon-signed {
+    background-image: url(/static/images/icon_signed@3x.png);
+    @include backgroundSizeContain();
+}
+
+/*
+ * 首页底导
+ */
+.icon-navigator-home {
+    background-image: url(/static/images/icon_navigator_home@3x.png);
+    @include backgroundSizeContain();
+    &.hover {
+        background-image: url(/static/images/icon_navigator_home_s@3x.png);
+    }
+}
+.icon-navigator-enter-forum {
+    background-image: url(/static/images/icon_navigator_enter_forum@3x.png);
+    @include backgroundSizeContain();
+    &.hover {
+        background-image: url(/static/images/icon_navigator_enter_forum_s@3x.png);
+    }
+}
+.icon-navigator-message {
+    background-image: url(/static/images/icon_navigator_message@3x.png);
+    @include backgroundSizeContain();
+    &.hover {
+        background-image: url(/static/images/icon_navigator_message_s@3x.png);
+    }
+}
+.icon-navigator-user-center {
+    background-image: url(/static/images/icon_navigator_user_center@3x.png);
+    @include backgroundSizeContain();
+    &.hover {
+        background-image: url(/static/images/icon_navigator_user_center_s@3x.png);
+    }
+}

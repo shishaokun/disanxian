@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="zT7xYaERIt" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" >
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link name="apple-touch-icon" href="https://tb1.bdstatic.com/tb/cms/tbwise/apple-touch-icon-144x144-precomposed.png">
+    <meta name="app-mobile-web-app-title" content="百度贴吧">
+
+    <meta property='og:title' content=<%= htmlWebpackPlugin.options.title %> />
+    <meta property='og:image' content='https://tb1.bdstatic.com/tb/cms/tbwise/apple-touch-icon-144x144-precomposed.png'/>
+    <meta property='og:description' content='百度贴吧是以兴趣主题聚合志同道合者的互动平台，同好网友聚集在这里交流话题、展示自我、结交朋友。主题涵盖了娱乐、游戏、小说、地区、生活等各方面 ...' />
+
+    <link rel="dns-prefetch" href="https://tb1.bdstatic.com/" />
+    <link rel="dns-prefetch" href="https://tb2.bdstatic.com/" />
+    <link rel="dns-prefetch" href="https://release.bdstatic.com/" />
+    <link rel="dns-prefetch" href="https://img.baidu.com/" />
+    <link rel="dns-prefetch" href="https://passport.baidu.com/" />
+    <link rel="dns-prefetch" href="https://dup.baidustatic.com/" />
+    <link rel="dns-prefetch" href="https://cpro.baidustatic.com/" />
+
+    <? /* iOS icons */ ?>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tb1.bdstatic.com/tb/cms/tbwise/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://tb1.bdstatic.com/tb/cms/tbwise/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="https://tb1.bdstatic.com/tb/cms/tbwise/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="https://tb1.bdstatic.com/tb/cms/tbwise/apple-touch-icon-57x57-precomposed.png">
+    <? /* Generic Icon */ ?>
+    <link rel="shortcut icon" href="https://tb1.bdstatic.com/tb/cms/tbwise/touch-icon-57x57.png">
+    <? /* Chrome Add to Homescreen */ ?>
+    <link rel="shortcut icon" sizes="196x196" href="https://tb1.bdstatic.com/tb/cms/tbwise/touch-icon-196x196.png">
+
+    <script>
+      (function (baseWidth) {
+          var _baseWidth = baseWidth || 750;
+          var win = window;
+          var doc = win.document.documentElement;
+          var ua = navigator.userAgent;
+          var matches = ua.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i);
+          var UCversion = ua.match(/U3\/((\d+|\.){5,})/i);
+          var isUCHd = UCversion && parseInt(UCversion[1].split('.').join(''), 10) >= 80;
+          var isIos = navigator.appVersion.match(/(iphone|ipad|ipod)/gi);
+          var dpr = win.devicePixelRatio || 1;
+          var isTBAPP = navigator.appVersion.match(/(tieba)/gi) ? true : false;
+          var appVersion = navigator.appVersion.substring(navigator.appVersion.indexOf('tieba/') + 6);
+          function refreshRem() {
+              var clientWidth = doc.clientWidth,entHtml = "}";
+              entHtml = ";max-width:" + clientWidth +"px;margin-right:auto!important;margin-left:auto!important;}";
+              win.rem = (clientWidth / _baseWidth) * 100;
+              doc.style.fontSize=win.rem+'px';
+          }
+          win.dpr = dpr;
+          var dprRound = Math.round(dpr);
+          doc.setAttribute("data-ckdpr", dprRound);
+          doc.setAttribute("data-dpr", 1);
+          win.addEventListener("resize",
+              function () {
+                  clearTimeout(timeouter), timeouter = setTimeout(refreshRem, 300);
+              },
+          false);
+          win.addEventListener("pageshow",
+              function (a) {
+                  win.persisted && (clearTimeout(timeouter), timeouter = setTimeout(refreshRem, 300))
+              },
+          false);
+          refreshRem()
+      })();
+    </script>
+    <title>贴吧 Lite</title>
+    <% if (htmlWebpackPlugin.options.nodeModules) { %>
+      <!-- Add `node_modules/` to global paths so `require` works properly in development -->
+      <script>
+        require('module').globalPaths.push('<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\') %>')
+      </script>
+    <% } %>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- Set `__static` path to static files in production -->
+    <% if (!process.browser) { %>
+      <script>
+        if (process.env.NODE_ENV !== 'development') window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
+      </script>
+    <% } %>
+    <!-- webpack builds are automatically injected -->
+  </body>
+</html>

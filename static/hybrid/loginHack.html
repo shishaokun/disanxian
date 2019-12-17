@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    </body>
+    <script>
+        let visit = localStorage.getItem('__tieba__fe__lite__login__visited')
+        if (visit === 'yes') {
+            // ipcRenderer.sendToHost('login_back');
+            localStorage.removeItem('__tieba__fe__lite__login__visited')
+            window.close()
+        } else {
+            localStorage.setItem('__tieba__fe__lite__login__visited', 'yes')
+            setTimeout(function () {
+                location.href = "https://wappass.baidu.com/passport?login&u=" + encodeURIComponent('https://tieba.baidu.com')
+            }, 0)
+        }
+    </script>
+</html>
